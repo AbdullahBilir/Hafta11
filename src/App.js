@@ -1,8 +1,18 @@
-import logo from "./logo.svg";
-import "./App.css";
+import { useState } from "react";
+import C1 from "./bileşenler/C1";
+import GlobalContext from "./contexts/GlobalContext";
 
 function App() {
-  return <>Merhaba</>;
+  const [user, setUser] = useState("Orhan Gencebay");
+
+  return (
+    <GlobalContext.Provider value={user}>
+      <>
+        <h1>App</h1>
+        <C1 />
+      </>
+    </GlobalContext.Provider>
+  );
 }
 
 export default App;
