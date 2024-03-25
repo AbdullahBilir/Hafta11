@@ -1,8 +1,19 @@
-import logo from "./logo.svg";
-import "./App.css";
+import { useRef } from "react";
 
 function App() {
-  return <>Merhaba</>;
+  const inputref = useRef();
+  const onButtonClick = () => {
+    console.log(inputref.current.value);
+  };
+
+  return (
+    <>
+      <div>
+        <input ref={inputref} />
+        <button onClick={onButtonClick}>butona tıkla</button>
+      </div>
+    </>
+  );
 }
 
 export default App;
